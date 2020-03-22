@@ -3,15 +3,25 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpClient\HttpClient;
 
 class ShowStatusController extends AbstractController
 {
+
+    /**
+     * @Route("/", name="home")
+     */
+    public function home(): Response
+    {
+        return $this->redirectToRoute('show_status');
+    }
+
     /**
      * @Route("/show/status", name="show_status")
      */
-    public function index()
+    public function index(): Response
     {
 
         $client = HttpClient::create();
