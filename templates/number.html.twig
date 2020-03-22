@@ -15,7 +15,7 @@
                 <div class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">COVID-19 Ergebnis</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">COVID-19 - Nummer eintragen</h6>
                         <div class="dropdown no-arrow">
                             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -33,8 +33,11 @@
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
-                        Hallo, dein Test Ergebnis ist:
-                        <b>{{ state }}</b>
+                        {{ form_start(form) }}
+                        {{ form_widget(form) }}
+                        <br>
+                        <button class="btn btn-info btn-block">{{ 'save'|trans }}</button>
+                        {{ form_end(form) }}
                     </div>
                 </div>
             </div>
