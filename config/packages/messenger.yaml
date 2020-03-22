@@ -1,0 +1,10 @@
+framework:
+    messenger:
+        transports:
+            test_event.test_event: "%env(TEST_EVENT_TEST_EVENT)%"
+            test_event.test_event2: "%env(TEST_EVENT_TEST_EVENT_2)%"
+
+        routing:
+            'MessageInfo\NumberCreationRequestAPIDataProvider' :
+                - test_event.test_event
+                - test_event.test_event2
